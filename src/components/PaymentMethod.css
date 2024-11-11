@@ -1,0 +1,27 @@
+/* PaymentMethod.css */
+.payment-method-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+  }
+  
+  .payment-method-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .payment-method-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .payment-method-item.selected {
+    background: #ffc300;
+    color: #fff;
+  }

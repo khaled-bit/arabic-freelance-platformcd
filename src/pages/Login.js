@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaEnvelope, FaLock } from 'react-icons/fa'; // Importing relevant icons
+import './Login.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -17,32 +19,40 @@ const Login = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="login-container">
       <h2>تسجيل الدخول</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
           <label htmlFor="email">البريد الإلكتروني</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-container">
+            <FaEnvelope className="input-icon" />
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="أدخل بريدك الإلكتروني"
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="password">كلمة المرور</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-container">
+            <FaLock className="input-icon" />
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="أدخل كلمة المرور"
+              required
+            />
+          </div>
         </div>
         <button type="submit" className="btn btn-primary">دخول</button>
       </form>

@@ -1,0 +1,15 @@
+.location-selector-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .location-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  

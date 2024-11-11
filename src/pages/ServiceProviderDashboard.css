@@ -1,0 +1,96 @@
+.dashboard-layout {
+    display: flex;
+    flex-direction: row; /* Sidebar on the right */
+    height: 100vh;
+    font-family: 'Cairo', sans-serif; /* Use a font suitable for Arabic */
+  }
+  
+  .sidebar-right {
+    width: 250px;
+    background: linear-gradient(to bottom, #ff9500, #ff7b00);
+    color: #fff;
+    padding: 20px;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.15);
+    height: 100vh;
+  }
+  
+  .sidebar-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-item {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+  }
+  
+  .menu-item:hover,
+  .menu-item.active {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f8f9fa;
+  }
+  
+  .tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    background: #fff;
+  }
+  
+  .tasks-table th,
+  .tasks-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right; /* For RTL support */
+  }
+  
+  .tasks-table th {
+    background: #ff9500;
+    color: #fff;
+    text-align: right; /* For RTL support */
+  }
+  
+  .tasks-table td {
+    font-size: 0.9rem;
+  }
+  
+  .status-in-progress {
+    color: #ff6f00;
+    font-weight: bold;
+  }
+  
+  .status-finished {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .finish-button {
+    padding: 6px 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .finish-button:hover {
+    background-color: #218838;
+  }
+  
+  

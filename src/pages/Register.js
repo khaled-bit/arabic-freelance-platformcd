@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa'; // Importing icons
+import './Register.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -18,44 +20,56 @@ const Register = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="register-container">
       <h2>تسجيل حساب جديد</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="register-form">
         <div className="form-group">
           <label htmlFor="name">الاسم</label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-container">
+            <FaUser className="input-icon" />
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="أدخل اسمك"
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="email">البريد الإلكتروني</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-container">
+            <FaEnvelope className="input-icon" />
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="أدخل بريدك الإلكتروني"
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="password">كلمة المرور</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-container">
+            <FaLock className="input-icon" />
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="أدخل كلمة المرور"
+              required
+            />
+          </div>
         </div>
         <button type="submit" className="btn btn-primary">تسجيل</button>
       </form>

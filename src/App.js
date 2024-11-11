@@ -8,6 +8,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProvidersList from './components/ProvidersList';
 import ProviderProfile from './pages/ProviderProfile';
+import ServiceProviderDashboard from './pages/ServiceProviderDashboard';
+import ChatComponent from './components/ChatComponent';
 import ProviderContextProvider from './context/ProviderContext';
 import './App.css';
 import '@fontsource/aref-ruqaa';
@@ -15,8 +17,11 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = (isOpen) => {
-    setIsMenuOpen(isOpen);
+    if (typeof isOpen === 'boolean') {
+      setIsMenuOpen(isOpen);
+    }
   };
+  
 
   return (
     <ProviderContextProvider>
@@ -26,6 +31,14 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route
+          path="/dashboard"
+          element={
+            // Optionally wrap this with a ProtectedRoute to ensure only logged-in users see it
+            <ServiceProviderDashboard />
+          }
+        />
+            <Route path="/chat" element={<ChatComponent />} />
             <Route path="/providers" element={<ProvidersList />} />
             <Route path="/provider/:id" element={<ProviderProfile />} />
             <Route path="/register" element={<Register />} />

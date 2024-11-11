@@ -1,0 +1,14 @@
+/* DeliveryTime.css */
+.delivery-time-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .time-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }

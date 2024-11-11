@@ -1,28 +1,116 @@
-.menu-item {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  display: block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: color 0.3s, background 0.3s;
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
 }
 
-.menu-item:hover {
-  color: #ffc300;
-  background: rgba(0, 0, 0, 0.1);
+.bm-menu {
+  background: linear-gradient(135deg, #ffc300, #ff5733);
+  padding: 2em 1.5em;
+  font-size: 1.2em;
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.bm-item-list {
+  color: #000;
+  padding: 1em;
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.bm-item:hover {
+  background: rgba(255, 87, 51, 0.8);
+  transform: scale(1.05);
 }
 
 .bm-burger-button {
-  display: block;
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 36px;
+  height: 30px;
+  z-index: 3; /* Ensure the button is above other elements */
 }
 
 .bm-burger-bars {
-  height: 4px !important;
+  background: #ff5733;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #fff;
+}
+
+/* Fix background overlay issue */
+.bm-overlay {
+  z-index: 2;
+}
+/* SideMenu.css */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-menu {
+  background: linear-gradient(135deg, #ffc300, #ff5733);
+  padding: 2em 1.5em;
+  font-size: 1.2em;
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.bm-item-list {
+  color: #000;
+  padding: 1em;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.menu-item:hover {
+  background: rgba(255, 87, 51, 0.8);
+  transform: scale(1.05);
+}
+
+.menu-icon {
+  margin-right: 10px;
+  font-size: 1.5em; /* Adjust icon size as needed */
+  color: #fff;
+}
+
+.bm-burger-button {
+  display: none; /* Hidden as per your requirements */
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
 }
 
 .bm-cross {

@@ -77,7 +77,7 @@ const ServiceProviderCard = () => {
       </div>
 
       <button className="btn-chat trendy-btn" onClick={handleChatInitiation}>
-        دردش الآن
+        طلب خدمة
       </button>
     </div>
   );
