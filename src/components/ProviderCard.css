@@ -1,0 +1,70 @@
+.provider-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+     overflow: visible; /* Ensure dropdowns or pop-ups are not clipped */
+    text-align: right; /* Aligns text to the right for RTL layout */
+    direction: rtl; /* Ensures the card content follows RTL direction */
+  }
+  
+  .provider-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .provider-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .provider-description {
+    color: #666;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  .provider-rating {
+    color: #ffcc00; /* Gold color for stars */
+    margin: 10px 0;
+  }
+  
+  .provider-services {
+    margin: 15px 0;
+  }
+  
+  .provider-services h4 {
+    margin-bottom: 10px;
+  }
+  
+  .provider-services ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .provider-services li {
+    background-color: #f1f1f1;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .view-profile-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .view-profile-button:hover {
+    background-color: #0056b3;
+  }
+  

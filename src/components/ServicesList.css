@@ -1,0 +1,83 @@
+.services-list {
+  padding: 40px;
+  background: linear-gradient(145deg, #f3f4f6, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+  margin: 30px 0;
+  text-align: center;
+}
+
+.services-list h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: bold;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Service Card Styles */
+.service-card {
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  border: 2px solid #ff9500; /* Orange border */
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.service-card .price {
+  font-weight: bold;
+  color: #ff9500;
+  font-size: 1.2rem;
+}
+
+.service-card .btn-details {
+  display: inline-block;
+  background-color: #ff5733;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.service-card .btn-details:hover {
+  background-color: #e64a19;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .service-card {
+    width: 100%;
+    max-width: none;
+  }
+}

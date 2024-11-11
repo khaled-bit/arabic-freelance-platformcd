@@ -1,0 +1,147 @@
+.provider-profile {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #333;
+}
+
+.description {
+  margin: 10px 0;
+  color: #555;
+}
+
+.rating-reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.rating {
+  color: #ffcc00;
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
+.reviews {
+  color: #666;
+}
+
+.services-offered {
+  margin-top: 20px;
+}
+
+.services-offered h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.services-offered ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.services-offered li {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.service-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.service-description {
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.service-price {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.reviews-section {
+  margin-top: 30px;
+}
+
+.reviews-section h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.review {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewer-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.reviewer-info {
+  flex-grow: 1;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.review-date {
+  display: block;
+  color: #999;
+  font-size: 0.9em;
+}
+
+.review-rating {
+  color: #ffcc00;
+  font-size: 1.2em;
+}
+
+.review-text {
+  color: #555;
+  line-height: 1.6;
+}
