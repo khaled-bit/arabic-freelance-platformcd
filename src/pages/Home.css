@@ -1,6 +1,89 @@
 .home-container {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+.section-divider {
+  width: 80%;
+  margin: 20px auto;
+  height: 2px;
+  background: linear-gradient(to right, #ffc300, transparent);
+}
+
+.welcome-section,
+.services-list,
+.provider-list,
+.testimonials,
+.faq,
+.why-us {
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 1400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.welcome-section:hover,
+.services-list:hover,
+.provider-list:hover,
+.testimonials:hover,
+.faq:hover,
+.why-us:hover {
+  transform: translateY(-5px);
+}
+
+.welcome-section {
+  background: linear-gradient(to bottom right, #fff5cc, #ffe680);
+  text-align: center;
+}
+
+.services-list,
+.provider-list {
+  background: #fff;
+}
+
+.testimonials {
+  background: #ffe680;
+}
+
+.faq {
+  background: #fff9e6;
+}
+
+.why-us {
+  background: linear-gradient(to bottom right, #ffffff, #ffe680);
+}
+
+/* General Buttons */
+button, .btn-primary, .btn-chat {
+  background-color: #ffc300;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn-primary:hover, .btn-chat:hover {
+  background-color: #ffb000;
+}
+
+/* Decorative Header for Sections */
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ff9500;
+  margin: 10px auto 0;
+}
