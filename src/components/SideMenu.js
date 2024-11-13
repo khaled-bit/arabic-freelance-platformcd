@@ -1,7 +1,7 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
-import { FaHome, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { FaHome, FaSignInAlt, FaUserPlus, FaListAlt } from 'react-icons/fa'; // Importing an icon for service providers list
 import './SideMenu.css';
 
 const SideMenu = ({ isOpen, toggleMenu }) => {
@@ -20,6 +20,12 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
       </Link>
       <Link to="/login" className="menu-item" onClick={() => toggleMenu(false)}>
         <FaSignInAlt className="menu-icon" /> دخول
+      </Link>
+      <Link to="/providers" className="menu-item" onClick={() => toggleMenu(false)}>
+        <FaListAlt className="menu-icon" /> مقدمو الخدمة
+      </Link>
+      <Link to="/dashboard" className="menu-item" onClick={() => toggleMenu(false)}>
+        <FaListAlt className="menu-icon" /> لوحة التحكم 
       </Link>
     </Menu>
   );

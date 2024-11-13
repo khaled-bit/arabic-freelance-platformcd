@@ -7,6 +7,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   background: linear-gradient(to bottom right, #fff8e1, #ffcc80);
   position: relative;
+  overflow: visible;
 }
 
 .provider-card.trendy {
@@ -51,6 +52,11 @@
 
 .service-selection {
   margin-top: 15px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+  z-index: 9999; /* Ensure dropdown is above other elements */
 }
 
 .trendy-btn {

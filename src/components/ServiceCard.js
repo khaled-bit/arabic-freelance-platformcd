@@ -11,8 +11,10 @@ const ServiceCard = ({ service }) => {
 
   return (
     <div className="service-card">
+      <img src={service.image} alt={service.name} className="service-image" />
       <h3>{service.name}</h3>
       <p>{service.description}</p>
+      {/* <p className="price">السعر: {service.price} جنيه</p> */}
       <button className="btn-view-providers" onClick={handleViewProviders}>
         عرض مقدمي الخدمة
       </button>

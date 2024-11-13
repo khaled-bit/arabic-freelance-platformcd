@@ -24,7 +24,7 @@
 /* Service Card Styles */
 .service-card {
   background: linear-gradient(145deg, #ffffff, #f3f4f6);
-  border: 2px solid #ff9500; /* Orange border */
+  border: 2px solid #ff9500;
   border-radius: 15px;
   padding: 20px;
   width: 100%;
@@ -34,7 +34,6 @@
   overflow: hidden;
   position: relative;
 }
-
 
 .service-card:hover {
   transform: translateY(-10px);
@@ -72,6 +71,13 @@
 
 .service-card .btn-details:hover {
   background-color: #e64a19;
+}
+
+.service-card .service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 /* Media Query for Responsiveness */

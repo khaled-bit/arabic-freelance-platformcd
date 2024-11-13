@@ -56,24 +56,23 @@ const ServiceProviderCard = () => {
 
       <div className="service-selection">
         <label>اختر الخدمات للتحدث عنها:</label>
-        <MultiSelect
-          options={serviceOptions}
-          value={selectedServices}
-          onChange={setSelectedServices}
-          labelledBy="اختر الخدمات"
-          overrideStrings={{
-            selectSomeItems: 'اختر الخدمات',
-            allItemsAreSelected: 'تم اختيار جميع الخدمات',
-            selectAll: 'اختر الكل',
-            search: 'بحث',
-            clearSearch: 'مسح البحث',
-          }}
-          menuPortalTarget={document.body}
-          styles={{
-            menuPortal: (base) => ({ ...base, zIndex: 9999 }),
-            menu: (base) => ({ ...base, zIndex: 9999 }),
-          }}
-        />
+        <div className="dropdown-wrapper">
+          <MultiSelect
+            options={serviceOptions}
+            value={selectedServices}
+            onChange={setSelectedServices}
+            labelledBy="اختر الخدمات"
+            overrideStrings={{
+              selectSomeItems: 'اختر الخدمات',
+              allItemsAreSelected: 'تم اختيار جميع الخدمات',
+              selectAll: 'اختر الكل',
+              search: 'بحث',
+              clearSearch: 'مسح البحث',
+            }}
+            menuPosition="fixed" // Ensure the dropdown renders above other content
+            menuPortalTarget={document.body} // Render the menu outside of its parent container
+          />
+        </div>
       </div>
 
       <button className="btn-chat trendy-btn" onClick={handleChatInitiation}>
