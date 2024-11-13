@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MultiSelect } from 'react-multi-select-component';
+import Dropdown from 'react-bootstrap/Dropdown';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap styles are applied
+import Modal from 'react-modal'; // Ensure you have react-modal installed
 import './ServiceProviderCard.css';
+
+Modal.setAppElement('#root'); // Set app root for accessibility
 
 const ServiceProviderCard = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedServiceType, setSelectedServiceType] = useState('');
+  const [numberOfItems, setNumberOfItems] = useState(0);
+  const [photo, setPhoto] = useState(null);
 
   // Static provider data with sewing and threading services
   const provider = {
@@ -20,22 +28,17 @@ const ServiceProviderCard = () => {
     ],
   };
 
-  // Transform services into options for the MultiSelect component
-  const serviceOptions = provider.services.map((service) => ({
-    label: `${service.title} - ${service.price} جنيه`,
-    value: service.id,
-    service,
-  }));
-
-  const [selectedServices, setSelectedServices] = useState([]);
-
   const handleChatInitiation = () => {
-    if (selectedServices.length === 0) {
-      alert('يرجى اختيار خدمة واحدة على الأقل قبل بدء الدردشة.');
-      return;
-    }
-    const servicesToChatAbout = selectedServices.map((option) => option.service);
-    navigate('/chat', { state: { provider, services: servicesToChatAbout } });
+    setIsModalOpen(true); // Open the modal when this button is clicked
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal when called
+  };
+
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    setPhoto(file);
   };
 
   return (
@@ -55,29 +58,108 @@ const ServiceProviderCard = () => {
       <p>{provider.description}</p>
 
       <div className="service-selection">
-        <label>اختر الخدمات للتحدث عنها:</label>
-        <div className="dropdown-wrapper">
-          <MultiSelect
-            options={serviceOptions}
-            value={selectedServices}
-            onChange={setSelectedServices}
-            labelledBy="اختر الخدمات"
-            overrideStrings={{
-              selectSomeItems: 'اختر الخدمات',
-              allItemsAreSelected: 'تم اختيار جميع الخدمات',
-              selectAll: 'اختر الكل',
-              search: 'بحث',
-              clearSearch: 'مسح البحث',
-            }}
-            menuPosition="fixed" // Ensure the dropdown renders above other content
-            menuPortalTarget={document.body} // Render the menu outside of its parent container
-          />
-        </div>
+        <label>عرض الخدمات والأسعار</label>
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+             الخدمات
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            {provider.services.map((service) => (
+              <Dropdown.Item key={service.id} eventKey={service.id}>
+                {service.title} - {service.price} جنيه
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
 
       <button className="btn-chat trendy-btn" onClick={handleChatInitiation}>
         طلب خدمة
       </button>
+
+      {/* Modal for Service Request */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="طلب الخدمة"
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        <h2>طلب الخدمة - {provider.name}</h2>
+        <div className="form-section">
+          <div className="selection-group">
+            <label>نوع الخدمة:</label>
+            <select
+              value={selectedServiceType}
+              onChange={(e) => setSelectedServiceType(e.target.value)}
+              className="dropdown-select"
+            >
+              <option value="">اختر نوع الخدمة</option>
+              {provider.services.map((service) => (
+                <option key={service.id} value={service.title}>{service.title}</option>
+              ))}
+            </select>
+          </div>
+          <div className="selection-group">
+            <label>عدد العناصر:</label>
+            <input
+              type="number"
+              min="1"
+              value={numberOfItems}
+              onChange={(e) => setNumberOfItems(e.target.value)}
+              className="number-input"
+              placeholder="حدد عدد العناصر"
+            />
+          </div>
+          <div className="selection-group">
+            <label>صورة العيب (إذا وجدت):</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handlePhotoChange}
+              className="file-input"
+            />
+            {photo && <p>تم اختيار الصورة: {photo.name}</p>}
+          </div>
+          <div className="selection-group">
+            <label>نوع التسليم:</label>
+            <select className="dropdown-select">
+              <option value="">اختر نوع التسليم</option>
+              <option value="مزود الخدمة يأتي لاستلام الطلب">مزود الخدمة يأتي لاستلام الطلب</option>
+              <option value="المنصة تتولى التوصيل">المنصة تتولى التوصيل</option>
+            </select>
+          </div>
+          <div className="selection-group">
+            <label>موقع استلام الطلب</label>
+            <input
+              type="text"
+              placeholder="حدد الموقع الذي يجب استلام الطلب منه"
+              className="location-input"
+            />
+          </div>
+          <div className="selection-group">
+            <label>طريقة الدفع</label>
+            <select className="dropdown-select">
+              <option value="">اختر طريقة الدفع</option>
+              <option value="الدفع عند الاستلام">الدفع عند الاستلام</option>
+              <option value="بطاقة ائتمان/خصم">بطاقة ائتمان/خصم</option>
+              <option value="خدمة محفظة فودافون كاش">خدمة محفظة فودافون كاش</option>
+            </select>
+          </div>
+          <div className="selection-group">
+            <label>ملاحظات الطلب:</label>
+            <textarea
+              placeholder="أضف أي ملاحظات خاصة بالطلب هنا"
+              className="notes-textarea"
+            />
+          </div>
+          <div className="modal-actions">
+            <button onClick={closeModal} className="submit-button">إرسال</button>
+            <button onClick={closeModal} className="cancel-button">إلغاء</button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

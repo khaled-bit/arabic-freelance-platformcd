@@ -41,4 +41,12 @@
       width: 100%;
     }
   }
+  .dropdown-wrapper {
+    position: relative;
+    z-index: 1; /* This ensures the dropdown stays on top of other elements */
+  }
+  
+  .provider-card {
+    overflow: visible; /* Ensure children are visible */
+  }
   

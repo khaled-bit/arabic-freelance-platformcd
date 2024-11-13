@@ -13,6 +13,8 @@ import ChatComponent from './components/ChatComponent';
 import ProviderContextProvider from './context/ProviderContext';
 import './App.css';
 import '@fontsource/aref-ruqaa';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

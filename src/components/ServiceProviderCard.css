@@ -11,7 +11,7 @@
 }
 
 .provider-card.trendy {
-  border: 2px solid #ff9500;
+  border-color: #ff9500;
   background: linear-gradient(to bottom right, #fffbec, #ffe0b2);
 }
 
@@ -54,9 +54,13 @@
   margin-top: 15px;
 }
 
-.dropdown-wrapper {
-  position: relative;
-  z-index: 9999; /* Ensure dropdown is above other elements */
+.dropdown-custom {
+  margin-bottom: 15px; /* Adds space below the dropdown */
+}
+
+.button-container {
+  display: flex;
+  gap: 15px; /* Space between buttons */
 }
 
 .trendy-btn {
